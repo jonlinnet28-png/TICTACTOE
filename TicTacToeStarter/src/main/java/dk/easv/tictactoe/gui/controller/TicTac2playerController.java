@@ -3,6 +3,7 @@ package dk.easv.tictactoe.gui.controller;
 
 // Java imports
 import java.net.URL;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -56,6 +57,13 @@ public class TicTac2playerController implements Initializable {
 
                         String xOrO = player == 0 ? "X" : "O";
                         btn.setText(xOrO);
+
+                        if (btn.getText().equals("X")) {
+                            btn.setTextFill(Paint.valueOf("Red"));
+                        } else if (btn.getText().equals("O")) {
+                            btn.setTextFill(Paint.valueOf("Blue"));
+                        }
+
                         setPlayer();
                         game.getNextPlayer();
 
@@ -104,14 +112,20 @@ public class TicTac2playerController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         game = new GameBoard();
         setPlayer();
-
     }
 
     /**
      * Set the next player
      */
     public void setPlayer() {
-        lblPlayer.setText(TXT_PLAYER + game.getNextPlayer());
+        int player = game.getNextPlayer();
+
+        if (player == 0) {
+            lblPlayer.setText(TXT_PLAYER + "X");
+        } else if (player == 1) {
+            lblPlayer.setText(TXT_PLAYER + "O");
+        }
+
     }
 
 
@@ -126,9 +140,11 @@ public class TicTac2playerController implements Initializable {
             case -1:
                 message = "It's a draw :-(";
                 break;
-            default:
-                message = "Player " + winner + " wins!!!";
+            case 0:
+                message = "Player X wins!!!";
                 break;
+            case 1:
+                message = "Player O wins!!!";
         }
         lblPlayer.setText(message);
     }
@@ -141,6 +157,11 @@ public class TicTac2playerController implements Initializable {
             Button btn = (Button) n;
             btn.setText("");
             btn.setTextFill(Paint.valueOf("Black"));
+        }
+        for (Button[] rows: board) {
+
+            Arrays.fill(rows, null);
+
         }
     }
 }

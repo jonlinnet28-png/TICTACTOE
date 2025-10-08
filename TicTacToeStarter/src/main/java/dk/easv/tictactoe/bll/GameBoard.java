@@ -10,13 +10,13 @@ import javafx.scene.paint.Paint;
  */
 public class GameBoard implements IGameBoard
 {
-private int player;
+private int player = 0;
 
 private boolean gameState = true;
 
-private String winColor = "Red";
+private String winColor = "Green";
 
-private int winner = -2; // Default value
+private int winner = -2; // Default value | -1 = Draw, 0 = Player X Win, 1 = Player O Win
 
     /**
      * Returns 0 for player 0, 1 for player 1.
@@ -57,7 +57,6 @@ private int winner = -2; // Default value
      */
     public boolean isGameOver()
     {
-        //TODO Implement this method
         return !gameState;
     }
 
@@ -167,29 +166,20 @@ private int winner = -2; // Default value
         boolean filled = true;
 
         for (Button[] row: board) {
-
             for (Button btn: row) {
-
                 String newBtnText = (btn == null) ? "" : btn.getText();
-
                 if (newBtnText.isEmpty()) {
-
                     filled = false;
                     break;
-
                 }
             }
             if (!filled) {
-
                 break;
-
             }
-
         }
         if (filled) {
             winner = -1;
             gameState = false;
-
         }
     }
 

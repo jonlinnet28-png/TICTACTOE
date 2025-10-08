@@ -6,15 +6,14 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane id="pane" prefHeight="600.0" prefWidth="600.0" stylesheets="@../css/Main.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="dk.easv.tictactoe.gui.controller.TicTacVsComputerEasyController">
+<BorderPane id="pane" prefHeight="600.0" prefWidth="600.0" stylesheets="@../css/Main.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.easv.tictactoe.gui.controller.TicTacVsComputerEasyController">
     <top>
-        <Label fx:id="lblPlayer" text="Player: 1" BorderPane.alignment="CENTER">
+        <Label fx:id="lblPlayer" text="Player: X" BorderPane.alignment="CENTER">
             <font>
                 <Font size="28.0" />
             </font>
@@ -22,40 +21,40 @@
     </top>
     <center>
         <StackPane BorderPane.alignment="CENTER">
-            <GridPane fx:id="gridPane" hgap="10.0" vgap="10.0" alignment="CENTER">
+            <GridPane fx:id="gridPane" alignment="CENTER" hgap="10.0" vgap="10.0">
                 <columnConstraints>
-                    <ColumnConstraints prefWidth="150"/>
-                    <ColumnConstraints prefWidth="150"/>
-                    <ColumnConstraints prefWidth="150"/>
+                    <ColumnConstraints prefWidth="150" />
+                    <ColumnConstraints prefWidth="150" />
+                    <ColumnConstraints prefWidth="150" />
                 </columnConstraints>
                 <rowConstraints>
-                    <RowConstraints prefHeight="150"/>
-                    <RowConstraints prefHeight="150"/>
-                    <RowConstraints prefHeight="150"/>
+                    <RowConstraints prefHeight="150" />
+                    <RowConstraints prefHeight="150" />
+                    <RowConstraints prefHeight="150" />
                 </rowConstraints>
                 <children>
-                    <Button fx:id="btn1" minWidth="150" minHeight="150" maxWidth="150" maxHeight="150" onAction="#handleButtonAction" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="cell"/>
-                    <Button fx:id="btn2" minWidth="150" minHeight="150" maxWidth="150" maxHeight="150" onAction="#handleButtonAction" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="cell"/>
-                    <Button fx:id="btn3" minWidth="150" minHeight="150" maxWidth="150" maxHeight="150" onAction="#handleButtonAction" GridPane.columnIndex="2" GridPane.rowIndex="0" styleClass="cell"/>
-                    <Button fx:id="btn4" minWidth="150" minHeight="150" maxWidth="150" maxHeight="150" onAction="#handleButtonAction" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="cell"/>
-                    <Button fx:id="btn5" minWidth="150" minHeight="150" maxWidth="150" maxHeight="150" onAction="#handleButtonAction" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="cell"/>
-                    <Button fx:id="btn6" minWidth="150" minHeight="150" maxWidth="150" maxHeight="150" onAction="#handleButtonAction" GridPane.columnIndex="2" GridPane.rowIndex="1" styleClass="cell"/>
-                    <Button fx:id="btn7" minWidth="150" minHeight="150" maxWidth="150" maxHeight="150" onAction="#handleButtonAction" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="cell"/>
-                    <Button fx:id="btn8" minWidth="150" minHeight="150" maxWidth="150" maxHeight="150" onAction="#handleButtonAction" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="cell"/>
-                    <Button fx:id="btn9" minWidth="150" minHeight="150" maxWidth="150" maxHeight="150" onAction="#handleButtonAction" GridPane.columnIndex="2" GridPane.rowIndex="2" styleClass="cell"/>
+                    <Button fx:id="btn1" maxHeight="150" maxWidth="150" minHeight="150" minWidth="150" onAction="#handleButtonAction" styleClass="cell" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <Button fx:id="btn2" maxHeight="150" maxWidth="150" minHeight="150" minWidth="150" onAction="#handleButtonAction" styleClass="cell" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                    <Button fx:id="btn3" maxHeight="150" maxWidth="150" minHeight="150" minWidth="150" onAction="#handleButtonAction" styleClass="cell" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                    <Button fx:id="btn4" maxHeight="150" maxWidth="150" minHeight="150" minWidth="150" onAction="#handleButtonAction" styleClass="cell" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <Button fx:id="btn5" maxHeight="150" maxWidth="150" minHeight="150" minWidth="150" onAction="#handleButtonAction" styleClass="cell" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    <Button fx:id="btn6" maxHeight="150" maxWidth="150" minHeight="150" minWidth="150" onAction="#handleButtonAction" styleClass="cell" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                    <Button fx:id="btn7" maxHeight="150" maxWidth="150" minHeight="150" minWidth="150" onAction="#handleButtonAction" styleClass="cell" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <Button fx:id="btn8" maxHeight="150" maxWidth="150" minHeight="150" minWidth="150" onAction="#handleButtonAction" styleClass="cell" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    <Button fx:id="btn9" maxHeight="150" maxWidth="150" minHeight="150" minWidth="150" onAction="#handleButtonAction" styleClass="cell" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                 </children>
             </GridPane>
-            <Pane fx:id="overlayPane" pickOnBounds="false"/>
+            <Pane fx:id="overlayPane" pickOnBounds="false" />
         </StackPane>
     </center>
     <bottom>
-        <Button fx:id="btnNewGame" text="New Game" onAction="#handleNewGame" BorderPane.alignment="CENTER">
+        <Button fx:id="btnNewGame" onAction="#handleNewGame" text="New Game" BorderPane.alignment="CENTER">
             <font>
                 <Font size="18.0" />
             </font>
         </Button>
     </bottom>
     <padding>
-        <Insets top="10" right="10" bottom="10" left="10"/>
+        <Insets bottom="10" left="10" right="10" top="10" />
     </padding>
 </BorderPane>

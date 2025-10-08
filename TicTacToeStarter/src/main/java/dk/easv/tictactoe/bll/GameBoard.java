@@ -2,6 +2,7 @@
 package dk.easv.tictactoe.bll;
 
 import javafx.scene.control.Button;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 
 /**
@@ -69,14 +70,14 @@ private int winner = -2; // Default value | -1 = Draw, 0 = Player X Win, 1 = Pla
 
             if (b0Text.equals("X") && b1Text.equals("X") && b2Text.equals("X")){
                 b[0].setTextFill(Paint.valueOf(winColor));b[1].setTextFill(Paint.valueOf(winColor));b[2].setTextFill(Paint.valueOf(winColor));
-                System.out.println("Player 0 Wins Horizontally");
+                System.out.println("Player X Wins Horizontally");
                 winner = 0;
                 gameState = false;
                 return true;
             }
             else if (b0Text.equals("O") && b1Text.equals("O") && b2Text.equals("O")) {
                 b[0].setTextFill(Paint.valueOf(winColor));b[1].setTextFill(Paint.valueOf(winColor));b[2].setTextFill(Paint.valueOf(winColor));
-                System.out.println("Player 1 Wins Horizontally");
+                System.out.println("Player O Wins Horizontally");
                 winner = 1;
                 gameState = false;
                 return true;
@@ -104,14 +105,14 @@ private int winner = -2; // Default value | -1 = Draw, 0 = Player X Win, 1 = Pla
 
             if (b0Text.equals("X") && b1Text.equals("X") && b2Text.equals("X")){
                 b[0].setTextFill(Paint.valueOf(winColor));b[1].setTextFill(Paint.valueOf(winColor));b[2].setTextFill(Paint.valueOf(winColor));
-                System.out.println("Player 0 Wins Vertically");
+                System.out.println("Player X Wins Vertically");
                 winner = 0;
                 gameState = false;
                 return true;
             }
             else if (b0Text.equals("O") && b1Text.equals("O") && b2Text.equals("O")) {
                 b[0].setTextFill(Paint.valueOf(winColor));b[1].setTextFill(Paint.valueOf(winColor));b[2].setTextFill(Paint.valueOf(winColor));
-                System.out.println("Player 1 Wins Vertically");
+                System.out.println("Player O Wins Vertically");
                 winner = 1;
                 gameState = false;
                 return true;
@@ -131,13 +132,13 @@ private int winner = -2; // Default value | -1 = Draw, 0 = Player X Win, 1 = Pla
         if (centerBtnTxt.equals("X")) {
             if (topLeftBtnTxt.equals("X") && bottomRightBtnTxt.equals("X")) {
                 board[0][0].setTextFill(Paint.valueOf(winColor)); board[1][1].setTextFill(Paint.valueOf(winColor)); board[2][2].setTextFill(Paint.valueOf(winColor));
-                System.out.println("Player 0 Wins Diagonally");
+                System.out.println("Player X Wins Diagonally");
                 winner = 0;
                 gameState = false;
                 return true;
             } else if (topRightBtnTxt.equals("X") && bottomLeftBtnTxt.equals("X")) {
                 board[0][2].setTextFill(Paint.valueOf(winColor)); board[1][1].setTextFill(Paint.valueOf(winColor)); board[2][0].setTextFill(Paint.valueOf(winColor));
-                System.out.println("Player 0 Wins Diagonally");
+                System.out.println("Player X Wins Diagonally");
                 winner = 0;
                 gameState = false;
                 return true;
@@ -145,13 +146,13 @@ private int winner = -2; // Default value | -1 = Draw, 0 = Player X Win, 1 = Pla
         } else if (centerBtnTxt.equals("O")) {
             if (topLeftBtnTxt.equals("O") && bottomRightBtnTxt.equals("O")) {
                 board[0][0].setTextFill(Paint.valueOf(winColor)); board[1][1].setTextFill(Paint.valueOf(winColor)); board[2][2].setTextFill(Paint.valueOf(winColor));
-                System.out.println("Player 1 Wins Diagonally");
+                System.out.println("Player O Wins Diagonally");
                 winner = 1;
                 gameState = false;
                 return true;
             } else if (topRightBtnTxt.equals("O") && bottomLeftBtnTxt.equals("O")) {
                 board[0][2].setTextFill(Paint.valueOf(winColor)); board[1][1].setTextFill(Paint.valueOf(winColor)); board[2][0].setTextFill(Paint.valueOf(winColor));
-                System.out.println("Player 1 Wins Diagonally");
+                System.out.println("Player O Wins Diagonally");
                 winner = 1;
                 gameState = false;
                 return true;

@@ -61,7 +61,7 @@ public class TicTacVsComputerHardController extends TicTac2playerController impl
 
             int player = game.getPlayer(); // Sets the AI as player 1
             if (game.play(col, row)) { // Applies the game's logic
-                board[row][col].setText(player == 0 ? "X" : "O");
+                board[row][col].setText("O");
                 board[row][col].setTextFill(Paint.valueOf("Blue"));
 
 

@@ -131,7 +131,5 @@ public class TicTac2playerController implements Initializable {
             btn.setText("");
             btn.setTextFill(Paint.valueOf("Black"));
         }
-        for (Button[] rows: board) {
-        }
     }
 }

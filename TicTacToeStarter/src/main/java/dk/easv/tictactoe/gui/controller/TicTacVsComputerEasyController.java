@@ -29,8 +29,7 @@ public class TicTacVsComputerEasyController extends TicTac2playerController impl
                     if (player == 0) {
                         Button btn = (Button) event.getSource();
                         if (btn.getText().isEmpty()) {
-                            String xOrO = player == 0 ? "X" : "O";
-                            btn.setText(xOrO);
+                            btn.setText("X");
                             btn.setTextFill(Paint.valueOf("Red"));
                             playComputer();
                         }

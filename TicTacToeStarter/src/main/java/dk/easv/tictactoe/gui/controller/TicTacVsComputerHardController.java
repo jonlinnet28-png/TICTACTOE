@@ -33,7 +33,7 @@ public class TicTacVsComputerHardController extends TicTac2playerController impl
 
         int player = game.getPlayer(); // toggle and get current
         if (game.getGameState() && game.play(col, row) && btn.getText().isEmpty()) {
-            btn.setText(player == 0 ? "X" : "O");
+            btn.setText("X");
             btn.setTextFill(Paint.valueOf("Red"));
 
 

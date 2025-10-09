@@ -20,14 +20,14 @@ import javafx.scene.paint.Paint;
 public class TicTac2playerController implements Initializable {
 
     @FXML private Label lblPlayer; // Top label displaying player turn and win
-    @FXML public GridPane gridPane; // GridPane containing the 3x3 gameboard (buttons)
+    @FXML protected GridPane gridPane; // GridPane containing the 3x3 gameboard (buttons)
 
     private static final String TXT_PLAYER = "Player: ";
-    public IGameBoard game; // GameBoard instance
-    public Button[][] board = new Button[3][3]; // 2D array that will contain the buttons on the gameboard
+    protected IGameBoard game; // GameBoard instance
+    protected Button[][] board = new Button[3][3]; // 2D array that will contain the buttons on the gameboard
 
     @FXML
-    public void initializeBoardArray() {
+    protected void initializeBoardArray() {
         for (var node : gridPane.getChildren()) { // A for-loop that returns all nodes (components) in the grid pane
             if (node instanceof Button btn) {
                 int row = GridPane.getRowIndex(btn) == null ? 0 : GridPane.getRowIndex(btn);
@@ -98,7 +98,7 @@ public class TicTac2playerController implements Initializable {
         setPlayer();
     }
 
-    public void setPlayer() {
+    protected void setPlayer() {
         int player = game.getPlayer();
 
         if (player == 0) {
@@ -109,7 +109,7 @@ public class TicTac2playerController implements Initializable {
 
     }
 
-    public void displayWinner(int winner) {
+    protected void displayWinner(int winner) {
         String message = "";
         switch (winner)
         {
@@ -125,7 +125,7 @@ public class TicTac2playerController implements Initializable {
         lblPlayer.setText(message);
     }
 
-    private void clearBoard() {
+    protected void clearBoard() {
         for(Node n : gridPane.getChildren()) {
             Button btn = (Button) n;
             btn.setText("");

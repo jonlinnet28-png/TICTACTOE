@@ -32,12 +32,12 @@ private int winner = -2; // Default value | -1 = Draw, 0 = Player X Win, 1 = Pla
         return true;
     }
 
-    public boolean isGameOver()
-    {
+    public boolean isGameOver() {
         return !gameState;
     }
 
-    private boolean getWinnerHorizontal(Button[][] board) {
+    private boolean checkBoard(Button[][] board) {
+
         for (Button[] b: board) {
 
             String b0Text = (b[0] == null) ? "" : b[0].getText();
@@ -58,8 +58,15 @@ private int winner = -2; // Default value | -1 = Draw, 0 = Player X Win, 1 = Pla
             }
         }
 
-
         return false;
+
+    }
+
+    private boolean getWinnerHorizontal(Button[][] board) {
+
+
+
+        return checkBoard(board);
     }
 
     private boolean getWinnerVertical(Button[][] board) {
@@ -71,26 +78,8 @@ private int winner = -2; // Default value | -1 = Draw, 0 = Player X Win, 1 = Pla
                 tempBoard[i][j] = board[j][i];
             }
         }
-        for (Button[] b: tempBoard) {
 
-            String b0Text = (b[0] == null) ? "" : b[0].getText();
-            String b1Text = (b[1] == null) ? "" : b[1].getText();
-            String b2Text = (b[2] == null) ? "" : b[2].getText();
-
-            if (b0Text.equals("X") && b1Text.equals("X") && b2Text.equals("X")){
-                b[0].setTextFill(Paint.valueOf(winColor));b[1].setTextFill(Paint.valueOf(winColor));b[2].setTextFill(Paint.valueOf(winColor));
-                winner = 0;
-                gameState = false;
-                return true;
-            }
-            else if (b0Text.equals("O") && b1Text.equals("O") && b2Text.equals("O")) {
-                b[0].setTextFill(Paint.valueOf(winColor));b[1].setTextFill(Paint.valueOf(winColor));b[2].setTextFill(Paint.valueOf(winColor));
-                winner = 1;
-                gameState = false;
-                return true;
-            }
-        }
-        return false;
+        return checkBoard(tempBoard);
     }
 
     private boolean getWinnerDiagonal(Button[][] board) {

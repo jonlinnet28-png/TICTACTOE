@@ -17,9 +17,6 @@ import java.util.ResourceBundle;
 
 public class TicTacVsComputerHardController extends TicTac2playerController implements Initializable {
 
-    private static final String TXT_PLAYER = "Player: ";
-
-
     public  TicTacVsComputerHardController() {
         super();
     }

@@ -49,7 +49,7 @@ public class TicTac2playerController implements Initializable {
             int c = (col == null) ? 0 : col;
 
 
-            int player = game.getNextPlayer();
+            int player = game.getPlayer();
             if (game.getGameState()) {
                 if (game.play(c, r)) {
 
@@ -67,7 +67,7 @@ public class TicTac2playerController implements Initializable {
                         }
 
                         setPlayer();
-                        game.getNextPlayer();
+                        game.setNextPlayer();
 
                         game.checkWin(board);
 
@@ -99,7 +99,7 @@ public class TicTac2playerController implements Initializable {
     }
 
     public void setPlayer() {
-        int player = game.getNextPlayer();
+        int player = game.getPlayer();
 
         if (player == 0) {
             lblPlayer.setText(TXT_PLAYER + "X");

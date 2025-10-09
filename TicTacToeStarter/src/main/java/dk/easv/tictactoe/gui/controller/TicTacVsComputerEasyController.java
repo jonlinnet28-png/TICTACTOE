@@ -23,7 +23,7 @@ public class TicTacVsComputerEasyController extends TicTac2playerController impl
             int r = (row == null) ? 0 : row;
             int c = (col == null) ? 0 : col;
 
-            int player = game.getNextPlayer();
+            int player = game.getPlayer();
             if (game.getGameState()) {
                 if (game.play(c, r)) {
                     if (player == 0) {

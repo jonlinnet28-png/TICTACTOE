@@ -31,7 +31,7 @@ public class TicTacVsComputerHardController extends TicTac2playerController impl
         int col = GridPane.getColumnIndex(btn) == null ? 0 : GridPane.getColumnIndex(btn);
 
 
-        int player = game.getNextPlayer(); // toggle and get current
+        int player = game.getPlayer(); // toggle and get current
         if (game.getGameState() && game.play(col, row) && btn.getText().isEmpty()) {
             btn.setText(player == 0 ? "X" : "O");
             btn.setTextFill(Paint.valueOf("Red"));
@@ -59,7 +59,7 @@ public class TicTacVsComputerHardController extends TicTac2playerController impl
             int col = move[1];
 
 
-            int player = game.getNextPlayer(); // Sets the AI as player 1
+            int player = game.getPlayer(); // Sets the AI as player 1
             if (game.play(col, row)) { // Applies the game's logic
                 board[row][col].setText(player == 0 ? "X" : "O");
                 board[row][col].setTextFill(Paint.valueOf("Blue"));

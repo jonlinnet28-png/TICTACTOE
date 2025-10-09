@@ -15,7 +15,9 @@ public interface IGameBoard
      *
      * @return int Id of the next player.
      */
-    int getNextPlayer();
+    void setNextPlayer();
+
+    int getPlayer();
 
     /**
      * Attempts to let the current player play at the given coordinates. If the

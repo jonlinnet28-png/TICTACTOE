@@ -14,12 +14,16 @@ private String winColor = "Green";
 
 private int winner = -2; // Default value | -1 = Draw, 0 = Player X Win, 1 = Player O Win
 
-    public int getNextPlayer() {
+    public void setNextPlayer() {
         if (player == 0) {
             player = 1;
         } else if (player == 1) {
             player = 0;
         }
+    }
+
+    public int getPlayer() {
+
         return player;
     }
 
